@@ -152,8 +152,12 @@ export function ProductDashboard() {
 
           {filteredAndSortedProducts.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredAndSortedProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {filteredAndSortedProducts.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  priority={index < 2}
+                />
               ))}
             </div>
           ) : (
